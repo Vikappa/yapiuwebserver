@@ -1,13 +1,14 @@
 package vincenzocostantini.yapiu.yapiuwebserver.entities.users;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@Table(name = "customer")
 public class Customer extends Utente {
 
     public Customer(String email, String password, String nome, String cognome) {

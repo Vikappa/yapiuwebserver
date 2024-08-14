@@ -4,7 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import vincenzocostantini.yapiu.yapiuwebserver.entities.users.Utente;
 
-import java.util.UUID;
 @Repository
-public interface UtenteRepository extends JpaRepository< Utente, UUID > {
+public interface UtenteRepository extends JpaRepository< Utente, String > {
 }

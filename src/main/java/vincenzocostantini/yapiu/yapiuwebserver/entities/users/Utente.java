@@ -9,9 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @MappedSuperclass
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "ruolo", discriminatorType = DiscriminatorType.STRING)
-@DiscriminatorValue("ruolo")
+@DiscriminatorValue("utente")
 public abstract class Utente {
     @Id
     private String email;

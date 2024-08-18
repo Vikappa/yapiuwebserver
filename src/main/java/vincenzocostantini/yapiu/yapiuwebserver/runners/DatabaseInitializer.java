@@ -24,6 +24,9 @@ public class DatabaseInitializer {
     @Value("${admin.lastname}")
     private String adminLastName;
 
+    @Value("${jwt.secret}")
+    private String secret;
+
     @EventListener(ApplicationReadyEvent.class)
     public void runAfterStartup() {
         System.out.println("Applicazione avviata completamente. Inizializzazione del database in corso...");
@@ -36,7 +39,7 @@ public class DatabaseInitializer {
             System.out.println("adminLastName: " + adminLastName);
             Admin admin = new Admin(adminEmail, adminHash, adminFirstName, adminLastName);
             adminRepository.save(admin);
-            System.out.println("Admin creato con successo!");
+            System.out.println("Admin creato");
         }
 
     }

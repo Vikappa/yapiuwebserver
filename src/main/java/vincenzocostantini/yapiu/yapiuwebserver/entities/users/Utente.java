@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Getter
 @Setter
@@ -11,7 +12,7 @@ import lombok.Setter;
 @MappedSuperclass
 @DiscriminatorColumn(name = "ruolo", discriminatorType = DiscriminatorType.STRING)
 @DiscriminatorValue("utente")
-public abstract class Utente {
+public abstract class Utente implements UserDetails {
     @Id
     private String email;
 

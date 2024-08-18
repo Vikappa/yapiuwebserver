@@ -4,10 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
 import vincenzocostantini.yapiu.yapiuwebserver.entities.caricoscarico.Carico;
 import vincenzocostantini.yapiu.yapiuwebserver.entities.caricoscarico.Scarico;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 @Getter
@@ -34,4 +36,13 @@ public class Admin extends Utente {
         return "This is an admin role.";
     }
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @Override
+    public String getUsername() {
+        return null;
+    }
 }

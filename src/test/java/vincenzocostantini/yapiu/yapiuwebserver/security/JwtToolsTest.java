@@ -2,9 +2,9 @@ package vincenzocostantini.yapiu.yapiuwebserver.security;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,6 +25,7 @@ import static org.mockito.Mockito.when;
 @ActiveProfiles("test")
 class JwtToolsTest {
 
+    private static final Logger logger = org.slf4j.LoggerFactory.getLogger(JwtToolsTest.class);
     @Value("${jwt.secret}")
     private String secret;
 
@@ -39,6 +40,7 @@ class JwtToolsTest {
 
     @BeforeEach
     void setUp() {
+        logger.warn("Jwt tools fake secret: " + secret);
         MockitoAnnotations.openMocks(this);
     }
 
